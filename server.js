@@ -3,12 +3,12 @@ const mysql = require('mysql')
 const bodyparser = require('body-parser');
 
 const app = express();
-
+//mysql://b65843223fc0bf:75a25c3f@us-cdbr-east-02.cleardb.com/heroku_6cc4c98f9e0720d?reconnect=true
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'washy',
-    password: 'Hellen@1999',
-    database: 'users'
+    host: 'us-cdbr-east-02.cleardb.com',
+    user: 'b65843223fc0bf',
+    password: '75a25c3f',
+    database: 'heroku_6cc4c98f9e0720d'
 })
 connection.connect((err) => {
     if (err) throw err
