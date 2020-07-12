@@ -1,110 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <style>
-        .body{
-            margin: 0;
-            padding: 0;
-        }
-        .sign-up-form{
-            width: 300px;
-            box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-            background: #fff;
-            padding: 20px;
-            margin: 8% auto 0;
-            text-align: center;
-        }
-        .sign-up-form h1{
-            color: #1c8adb;
-            margin-bottom: 30px;
-        }
-        .input-box{
-            border-radius: 20px;
-            padding: 10px;
-            margin: 10px 0;
-            width: 90%;
-            border: 1px solid #999;
-            outline: none;
-        }
-        button{
-            color: #fff;
-            width:90%;
-            padding: 4%;
-            border-radius: 20px;
-            font-size: 15px;
-            margin: 10px;
-            border:none;
-            outline: none;
-            cursor: pointer;
-        }
-        .signup-btn{
-            background-color: #1c8adb;
-        }
-        .fb-btn{
-            background-color:#21afde;
-        }
-        a{
-            text-decoration: none;
-        }
-        hr{
-            margin-top: 20px;
-            width: 80%;
-        }
-        .or{
-            background: #fff;
-            width: 30px;
-            margin: -19px auto 10px;
-        }
-        img{
-            width: 70px;
-            margin-top: -50px;
-        }
-        p{
-            font-size: 12px;
-            color: #999;
-            margin-right: 115px;
-        }
-    
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="postSelecta.js"></script>    
 </head>
+
 <body>
     <div class="sign-up-form">
         <img src="icon.png" alt="">
         <h1>Sign up</h1>
-        <form>
-            
-            <input type="text" id ="email"  class="input-box" placeholder="Your email" required>
-            <input type="password" id="pass-word" class="input-box" placeholder="Your password" required>
+        <form id="data-form" action="/login" method="POST">
+            <input type="text" name="email" class="input-box" placeholder="Your email" required>
+            <input type="password" name="password" class="input-box" placeholder="Your password" required>
             <p> <span><input type="checkbox"></span> I agree to terms and conditions.</p>
-            <button type="button" class="signup-btn" onclick="login ()">Sign up</button>
+            <button id="signup-button" class="signup-btn">Sign up</button>
             <hr>
             <p class="or">OR</p>
-            <button type="button" class="fb-btn" onclick="login ()">Log in </button>
+            <button type="submit" id="login-button" class="fb-btn">Log in </button>
             <p>Do you have an account ? <a href="#">Sign in</a></p>
         </form>
     </div>
-    
+
 
     <script>
-        function signup(){
-            var x, text;
+    //     function signup(){
+    //         var x, text;
 
-    // Get the value of the input field with id="pass-word"
-    x = document.getElementById("email").value;
+    // // Get the value of the input field with id="pass-word"
+    // x = document.getElementById("email").value;
 
-    // If x is Not 1234
-    if (x ="") {
-        text = "Input cannot be empty";
-    } else {
-        text = "Input OK";
-    }
-    document.getElementById("email").innerHTML = text;
-        }
-        
+    // // If x is Not 1234
+    // if (x ="") {
+    //     text = "Input cannot be empty";
+    // } else {
+    //     text = "Input OK";
+    // }
+    // document.getElementById("email").innerHTML = text;
+    //     }
+
     </script>
 
 </body>
+
 </html>
