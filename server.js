@@ -4,13 +4,13 @@ const bodyparser = require('body-parser');
 
 const app = express();
 //mysql://b65843223fc0bf:75a25c3f@us-cdbr-east-02.cleardb.com/heroku_6cc4c98f9e0720d?reconnect=true
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: 'us-cdbr-east-02.cleardb.com',
     user: 'b65843223fc0bf',
     password: '75a25c3f',
     database: 'heroku_6cc4c98f9e0720d'
 })
-connection.connect((err) => {
+connection.getConnection((err) => {
     if (err) throw err
     console.log('connected successfully')
 })
@@ -22,6 +22,7 @@ app.set('port', (process.env.PORT || 4000))
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
+
 app.post('/signup', (req, res) => {
     let sql = "INSERT INTO users(u_email,u_password) VALUES('" + req.body.email + "','" + req.body.password + "');"
     connection.query(sql, (err, results) => {
