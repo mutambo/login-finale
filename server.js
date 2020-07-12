@@ -44,6 +44,8 @@ app.post('/login', (req, res) => {
             } else {
                 res.sendFile(__dirname + '/index.html')
             }
+        }else{
+            res.sendFile(__dirname + '/index.html')
         }
     })
 
